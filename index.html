@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Reading Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1>My Reading Tracker</h1>
+                <p>Keep track of the books you're reading.</p>
+            </div>
+
+            <button id="addBookBtn" class="primary-btn">
+                + Add Book
+            </button>
+        </header>
+
+        <main>
+            <section class="stats-section">
+                <div class="stat-card">
+                    <h3>Total Books</h3>
+                    <p id="totalBooks">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Reading</h3>
+                    <p id="readingBooks">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Completed</h3>
+                    <p id="completedBooks">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pages Read</h3>
+                    <p id="pagesRead">0</p>
+                </div>
+
+            </section>
+
+            <section class="form-section" id="bookFormSection">
+                <h2 id="formTitle">Add a Book</h2>
+                <form id="bookForm">
+                    <div class="form-group">
+                        <label for="bookTitle">Book Title</label>
+
+                        <input
+                            type="text"
+                            id="bookTitle"
+                            placeholder="Enter book title"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookAuthor">Author</label>
+
+                        <input
+                            type="text"
+                            id="bookAuthor"
+                            placeholder="Enter author name"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="totalPages">Total Pages</label>
+
+                        <input
+                            type="number"
+                            id="totalPages"
+                            placeholder="Enter total pages"
+                            min="1"
+                            step="1"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="currentPage">Current Page</label>
+
+                        <input
+                            type="number"
+                            id="currentPage"
+                            placeholder="Enter current page"
+                            min="0"
+                            step="1"
+                            value="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookStatus">Reading Status</label>
+
+                        <select id="bookStatus" required>
+                            <option value="want">Want to Read</option>
+                            <option value="reading">Currently Reading</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-buttons">
+                        <button
+                            type="submit"
+                            id="saveBookBtn"
+                            class="primary-btn"
+                        >
+                            Save Book
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancelBtn"
+                            class="secondary-btn"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+                <p id="formMessage" role="status"></p>
+
+            </section>
+
+
+            <section class="library-section">
+
+                <div class="section-heading">
+                    <h2>My Books</h2>
+                    <p>Your reading list and progress.</p>
+                </div>
+
+
+                <div class="toolbar">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search books..."
+                    >
+
+                    <select id="statusFilter">
+                        <option value="all">All Books</option>
+                        <option value="want">Want to Read</option>
+                        <option value="reading">Currently Reading</option>
+                        <option value="completed">Completed</option>
+                    </select>
+
+                </div>
+
+                <div id="booksContainer" class="books-grid">
+
+                    <div class="empty-state" id="emptyState">
+                        <h3>No books added yet</h3>
+
+                        <p>
+                            Add a book to start tracking your reading progress.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>My Reading Tracker</p>
+        </footer>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
